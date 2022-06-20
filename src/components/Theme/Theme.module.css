@@ -1,0 +1,50 @@
+.theme {
+  height: 19px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme:hover {
+  cursor: pointer;
+}
+
+.theme p {
+  margin-right: 16px;
+  
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: right;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.theme.light p,
+.theme.light svg path {
+  color: #697C9A;
+  fill: #697C9A;
+  transition: all 350ms ease-in-out;
+}
+
+.theme.light:hover p,
+.theme.light:hover svg path {
+  color: #222731;
+  fill: #222731;
+  transition: all 350ms ease-in-out;
+}
+
+.theme.dark p,
+.theme.dark svg path {
+  color: #FFFFFF;
+  fill: #FFFFFF;
+  transition: all 350ms ease-in-out;
+}
+
+.theme.dark:hover p,
+.theme.dark:hover svg path {
+  color: #90A4D4;
+  fill: #90A4D4;
+  transition: all 350ms ease-in-out;
+}
