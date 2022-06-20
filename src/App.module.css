@@ -5,10 +5,10 @@
   min-height: 100vh;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 
 .app.light {
   background-color: #F6F8FF;
@@ -18,4 +18,11 @@
 .app.dark {
   background-color: #141D2F;
   transition: all 350ms ease-in-out;
+}
+
+.app main {
+  display: flex;
+  width: 100%;
+  max-width: 730px;
+  height: 100%;
 }

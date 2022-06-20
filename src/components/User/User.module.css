@@ -1,0 +1,200 @@
+.user {
+  position: relative;
+  width: 100%;
+  max-width: 730px;
+  height: fit-content;
+
+  padding: 48px 48px 48px 202px;
+  border-radius: 15px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.user.light {
+  background: #fefefe;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  transition: all 350ms ease-in-out;
+}
+
+.user.dark {
+  background-color: #1e2a47;
+  transition: all 350ms ease-in-out;
+}
+
+.user .avatar {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+
+  width: 117px;
+  height: 117px;
+  border-radius: 50%;
+
+  margin-right: 37px;
+}
+
+.user .joined {
+  position: absolute;
+  top: 52px;
+  right: 48px;
+
+  height: 22px;
+  width: fit-content;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: right;
+}
+
+.user .info {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.user.light p {
+  color: #4b6a9b;
+  transition: all 350ms ease-in-out;
+}
+
+.user.dark p {
+  color: #ffffff;
+  transition: all 350ms ease-in-out;
+}
+
+.user .info .undefined {
+  opacity: 75%;
+}
+
+.user .info .name {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 39px;
+  height: 39px;
+
+  margin-bottom: 2px;
+
+  color: #2b3442;
+  transition: all 350ms ease-in-out;
+}
+
+.user.dark .info .name {
+  color: #ffffff;
+  transition: all 350ms ease-in-out;
+}
+
+.user .info .username {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  height: 24px;
+
+  margin-bottom: 20px;
+
+  color: #0079ff;
+}
+
+.user .info .bio {
+  height: 50px;
+  margin-bottom: 32px;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.user .info .statistics {
+  position: relative;
+  width: 480px;
+  height: 85px;
+  border-radius: 10px;
+
+  padding: 15px 32px 17px 32px;
+  margin-bottom: 37px;
+
+  background-color: #f6f8ff;
+  transition: all 350ms ease-in-out;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.user.dark .info .statistics {
+  background-color: #141d2f;
+  transition: all 350ms ease-in-out;
+}
+
+.user .info .statistics .counter {
+  display: flex;
+  flex-direction: column;
+}
+
+.user .info .statistics .counter .value {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+  height: 33px;
+  margin-top: -1px;
+  text-transform: uppercase;
+}
+
+.user .info .statistics .counter .label {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.user .info .statistics .counter:nth-child(2) {
+  position: absolute;
+  top: 15px;
+  left: 171px;
+}
+
+.user .info .statistics .counter:nth-child(3) {
+  position: absolute;
+  top: 15px;
+  left: 325px;
+}
+
+.user .info .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+
+  height: 63px;
+}
+
+.user .info .links .link {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.user .info .links .link > p {
+  position: absolute;
+  left: 36px;
+}
+
+.user .info .links .link svg path {
+  fill: #4B6A9B;
+  transition: all 350ms ease-in-out;
+}
+
+.user.dark .info .links .link svg path {
+  fill: #FFFFFF;
+  transition: all 350ms ease-in-out;
+}
