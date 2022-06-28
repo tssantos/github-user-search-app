@@ -1,0 +1,80 @@
+.search {
+  width: 100%;
+  height: 69px;
+
+  border-radius: 15px;
+
+  background-color: #fefefe;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  transition: all 350ms ease-in-out;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 32px;
+  padding-right: 10px;
+}
+
+.search.dark {
+  box-shadow: none;
+  background-color: #1e2a47;
+  transition: all 350ms ease-in-out;
+}
+
+.search .icon {
+  height: 24px;
+  width: 24px;
+  min-height: 24px;
+  min-width: 24px;
+  margin-right: 24px;
+}
+
+.search .noResults {
+  width: 92px;
+  min-width: 92px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+
+  color: #f74646;
+
+  margin-right: 24px;
+}
+
+.search .input {
+  height: 25px;
+  width: 100%;
+
+  margin-right: 24px;
+
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  font-family: "Space Mono";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #222731;
+  transition: all 350ms ease-in-out;
+}
+
+.search.dark .input {
+  color: #ffffff;
+  transition: all 350ms ease-in-out;
+}
+
+.search .input::placeholder {
+  font-family: "Space Mono";
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #4B6A9B;
+  transition: all 350ms ease-in-out;
+}
+
+.search.dark .input::placeholder {
+  color: #ffffff;
+  transition: all 350ms ease-in-out;
+}

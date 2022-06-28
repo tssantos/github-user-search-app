@@ -39,13 +39,13 @@ const User = (props: UserProps) => {
         </div>
         <div className={styles.links}>
           <div className={`${styles.link} ${(!appContext.user.location && styles['undefined']) || ''}`}>
-            <IconLocation/><p>{appContext.user.location}</p></div>
+            <IconLocation/><p>{appContext.user.location ?? 'Not available'}</p></div>
           <div className={`${styles.link} ${(!appContext.user.twitter_username && styles['undefined']) || ''}`}>
             <IconTwitter/><p>{appContext.user.twitter_username ?? 'Not available'}</p></div>
           <div className={`${styles.link} ${(!appContext.user.blog && styles['undefined']) || ''}`}>
-            <IconWebsite/><p>{appContext.user.blog}</p></div>
+            <IconWebsite/><p>{appContext.user?.blog.length > 0 ? appContext.user.blog : 'Not available'}</p></div>
           <div className={`${styles.link} ${(!appContext.user.company && styles['undefined']) || ''}`}>
-            <IconCompany/><p>{appContext.user.company}</p></div>
+            <IconCompany/><p>{appContext.user.company ?? 'Not available'}</p></div>
         </div>
       </div>
     </div>

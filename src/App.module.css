@@ -22,7 +22,14 @@
 
 .app main {
   display: flex;
+
+  flex-direction: column;
   width: 100%;
   max-width: 730px;
   height: 100%;
+}
+
+.app main > :first-child {
+  margin-top: 36px;
+  margin-bottom: 24px;
 }

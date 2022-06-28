@@ -1,10 +1,16 @@
+import { ChangeEventHandler, MouseEventHandler } from 'react';
+
 export type Theme = "light" | "dark";
 
 export interface IAppContext {
   theme: Theme;
   user: User;
+  hasResult: boolean;
+  busy: boolean;
   switchTheme: () => void;
   setUser: (user: User) => void;
+  onInputChange: ChangeEventHandler;
+  onSubmitSearch: MouseEventHandler;
 }
 export interface User {
     login: string;

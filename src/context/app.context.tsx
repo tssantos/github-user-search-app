@@ -1,5 +1,8 @@
 import { IAppContext, Theme, User } from '../types';
-import React, { PropsWithChildren, useState } from 'react';
+import React, { ChangeEvent, PropsWithChildren, useState } from 'react';
+import { ChangeEventHandler } from 'react';
+import { MouseEventHandler, MouseEvent } from 'react';
+import axios from 'axios';
 
 const defaultTheme: Theme = 'light';
 const defaultUser: User = {
@@ -41,8 +44,12 @@ const defaultUser: User = {
 const defaultState: IAppContext = {
   theme: defaultTheme,
   user: defaultUser,
+  hasResult: true,
+  busy: false,
   switchTheme: () => { },
-  setUser: (user: User) => {}
+  setUser: (user: User) => {},
+  onInputChange: () => {},
+  onSubmitSearch: () => {},
 };
 
 const AppContext = React.createContext<IAppContext>(defaultState);
@@ -50,17 +57,51 @@ const AppContext = React.createContext<IAppContext>(defaultState);
 export const AppProvider = (props: PropsWithChildren<{}>) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
   const [user, setUser] = useState<User>(defaultUser);
+  const [hasResult, setHasResult] = useState(true);
+  const [busy, setBusy] = useState(false);
+  const [search, setSearch] = useState('');
 
   const switchTheme = () => {
     setTheme(theme => theme === 'light' ? 'dark' : 'light');
   };
 
+  const onInputChange: ChangeEventHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    setSearch(event.currentTarget.value);
+  }
+
+  const onSubmitSearch: MouseEventHandler = (event: MouseEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    if (!busy) {
+      setBusy(true);
+      searchUser(search);
+    }
+  }
+
+  const searchUser = async (username: string) => {
+    axios.get(`https://api.github.com/users/${username}`)
+      .then(res => {
+        setUser(res.data);
+        setHasResult(true);
+      })
+      .catch((err) => {
+        setHasResult(false);
+      })
+      .finally(() => {
+        setBusy(false);
+      })
+  }
+
   return (
     <AppContext.Provider value={{
       theme,
       user,
+      hasResult,
+      busy,
       switchTheme,
       setUser,
+      onInputChange,
+      onSubmitSearch,
     }}
     >
       {props.children}
